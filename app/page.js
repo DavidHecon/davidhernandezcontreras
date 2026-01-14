@@ -122,20 +122,20 @@ export default function Home() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className={`${caveat.className} text-1xl md:text-2xl text-gray-300 tracking-tight mt-6`}
-        >
-          Menos complejidad. Más impacto.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="text-gray-400 max-w-xl mt-6"
         >
           Creo experiencias digitales modernas, enfocadas en rendimiento,
           animaciones y escalabilidad.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className={`${caveat.className} text-1xl md:text-2xl text-gray-300 tracking-tight mt-6`}
+        >
+          Menos complejidad. Más impacto.
         </motion.p>
 
         <div className="flex gap-4 mt-10">
