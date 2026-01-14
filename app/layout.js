@@ -7,12 +7,15 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "David Hernández | Portfolio",
   description: "Frontend Developer especializado en React y Next.js",
+  icons: {
+    icon: "/img/letra.png", 
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <body className={`${inter.className} min-h-screen bg-black text-white relative overflow-x-hidden`}>
+    <html lang="es" className={inter.className}>
+      <body className="min-h-screen bg-black text-white relative overflow-x-hidden">
         
         {/* Background animado */}
         <BackgroundAnimated />
