@@ -1,6 +1,6 @@
 "use client";
 
-
+import { Caveat } from "next/font/google";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -14,27 +14,16 @@ import {
   Linkedin,
 } from "lucide-react";
 
+const caveat = Caveat({subsets: ["latin"],weight: ["600"],});
+
 export default function Home() {
   const projects = [
-    {
-      title: "Juego del número secreto!",
-      image: "/img/juego-secreto.png",
-      link: "https://stupendous-naiad-6f79d1.netlify.app",
-      description: "Mini juego interactivo para adivinar un número del 1 al 10.",
-      tech: ["HTML", "JavaScript", "CSS"],
-    },
-    {
-      title: "Encriptador de Texto",
-      image: "/img/encriptador.png",
-      link: "https://encriptador-oracle-nexteducation.netlify.app",
-      description: "Aplicación web funcional para cifrado de textos.",
-      tech: ["HTML", "JavaScript", "CSS"],
-    },
     {
       title: "BlogDeCafé",
       image: "/img/cafeteria.png",
       link: "https://more-than-a-drink.netlify.app",
-      description: "Blog informativo sobre café, recetas y cursos especializados.",
+      description:
+        "Blog informativo sobre café, recetas y cursos especializados.",
       tech: ["HTML", "JavaScript", "CSS", "Diseño responsivo"],
     },
     {
@@ -45,10 +34,18 @@ export default function Home() {
       tech: ["HTML", "CSS", "Diseño responsivo"],
     },
     {
-      title: "Landing Fokus",
-      image: "/img/fokus.png",
-      link: "https://delightful-pie-fc718d.netlify.app",
-      description: "Herramienta enfocada para productividad y concentración.",
+      title: "Juego del número secreto!",
+      image: "/img/juego-secreto.png",
+      link: "https://stupendous-naiad-6f79d1.netlify.app",
+      description:
+        "Mini juego interactivo para adivinar un número del 1 al 10.",
+      tech: ["HTML", "JavaScript", "CSS"],
+    },
+    {
+      title: "Encriptador de Texto",
+      image: "/img/encriptador.png",
+      link: "https://encriptador-oracle-nexteducation.netlify.app",
+      description: "Aplicación web funcional para cifrado de textos.",
       tech: ["HTML", "JavaScript", "CSS"],
     },
     {
@@ -57,6 +54,13 @@ export default function Home() {
       link: "https://tuproyecto6.com",
       description: "Landing optimizada para conversión y performance.",
       tech: ["Next.js", "Framer Motion"],
+    },
+    {
+      title: "Landing Fokus",
+      image: "/img/fokus.png",
+      link: "https://delightful-pie-fc718d.netlify.app",
+      description: "Herramienta enfocada para productividad y concentración.",
+      tech: ["HTML", "JavaScript", "CSS"],
     },
   ];
 
@@ -79,7 +83,7 @@ export default function Home() {
     "Figma",
     "WordPress",
     "Java",
-    "Python"
+    "Python",
   ];
 
   const [index, setIndex] = useState(0);
@@ -91,7 +95,7 @@ export default function Home() {
   };
 
   return (
-<main className="min-h-screen relative z-10 overflow-hidden">
+    <main className="min-h-screen relative z-10 overflow-hidden">
       <section className="h-screen flex flex-col justify-center items-center text-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -114,6 +118,15 @@ export default function Home() {
         >
           Desarrollador Web
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className={`${caveat.className} text-1xl md:text-2xl text-gray-300 tracking-tight mt-6`}
+        >
+          Menos complejidad. Más impacto.
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -146,9 +159,12 @@ export default function Home() {
           <User /> Sobre mí
         </h2>
         <p className="text-gray-400 leading-relaxed">
-          ¡Hola! Soy Ingeniero en Informática, apasionado por la tecnología y enfocado en desarrollarme como Developer Front-End. 
-          Tengo habilidades sólidas para trabajar en equipo y bajo presión, lo que me permite colaborar eficazmente en proyectos desafiantes.
-          Soy entusiasta de las nuevas herramientas tecnológicas, me adapto rápidamente a los cambios, siempre en búsqueda de aprender y mejorar mis conocimientos.
+          ¡Hola! Soy Ingeniero en Informática, apasionado por la tecnología y
+          enfocado en desarrollarme como Developer Front-End. Tengo habilidades
+          sólidas para trabajar en equipo y bajo presión, lo que me permite
+          colaborar eficazmente en proyectos desafiantes. Soy entusiasta de las
+          nuevas herramientas tecnológicas, me adapto rápidamente a los cambios,
+          siempre en búsqueda de aprender y mejorar mis conocimientos.
         </p>
       </section>
 
@@ -177,7 +193,7 @@ export default function Home() {
                 UPIICSA – Instituto Politécnico Nacional
               </p>
               <span className="text-sm text-gray-500 block mt-2">
-                2021 · 2026
+                2021 - 2026
               </span>
             </div>
           </motion.div>
@@ -195,7 +211,7 @@ export default function Home() {
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold mb-2">
-                Formación en Front End
+                Formación en Front End y Backend
               </h3>
               <p className="text-gray-400 leading-relaxed">
                 Oracle Next Education
@@ -225,6 +241,25 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-xl group"
+          >
+            <img
+              src="/img/devf.jpg"
+              alt="Cursos y especialización"
+              className="w-full h-56 object-cover opacity-80 group-hover:opacity-100 transition"
+            />
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold mb-2">
+                Frontend Asistido con IA
+              </h3>
+              <p className="text-gray-400 leading-relaxed">DEV.F</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -246,7 +281,9 @@ export default function Home() {
                   className="w-40 h-24 flex flex-col items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl"
                 >
                   <img
-                    src={`https://skillicons.dev/icons?i=${skill.toLowerCase().replace('.', '')}`}
+                    src={`https://skillicons.dev/icons?i=${skill
+                      .toLowerCase()
+                      .replace(".", "")}`}
                     alt={skill}
                     className="h-10 mb-2"
                   />
@@ -268,7 +305,9 @@ export default function Home() {
                   className="w-40 h-24 flex flex-col items-center justify-center bg-zinc-900 border border-zinc-800 rounded-xl"
                 >
                   <img
-                    src={`https://skillicons.dev/icons?i=${skill.toLowerCase().replace('.', '')}`}
+                    src={`https://skillicons.dev/icons?i=${skill
+                      .toLowerCase()
+                      .replace(".", "")}`}
                     alt={skill}
                     className="h-10 mb-2"
                   />
@@ -281,98 +320,106 @@ export default function Home() {
       </section>
 
       <section id="projects" className="max-w-6xl mx-auto px-6 py-24">
-  <h2 className="text-4xl font-semibold mb-12 text-center">Proyectos</h2>
+        <h2 className="text-4xl font-semibold mb-12 text-center">Proyectos</h2>
 
-  <div className="relative flex items-center justify-center h-[100vh] overflow-hidden">
+        <div className="relative flex items-center justify-center min-h-screen overflow-hidden">
+          {/* BOTÓN IZQUIERDA */}
+          <button
+            onClick={prev}
+            className="absolute left-0 z-20 p-3 rounded-full bg-zinc-900 hover:bg-zinc-800"
+          >
+            <ArrowLeft />
+          </button>
 
-    {/* BOTÓN IZQUIERDA */}
-    <button
-      onClick={prev}
-      className="absolute left-0 z-20 p-3 rounded-full bg-zinc-900 hover:bg-zinc-800"
-    >
-      <ArrowLeft />
-    </button>
-
-    {/* SLIDE IZQUIERDO */}
-    <div className="absolute -translate-x-[55%] scale-90 opacity-40 z-0 transition-all duration-500">
-      <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl w-[720px]">
-        <img
-          src={projects[(index - 1 + projects.length) % projects.length].image}
-          alt="preview-left"
-          className="w-full h-[420px] object-cover"
-        />
-      </div>
-    </div>
-
-    {/* SLIDE CENTRAL */}
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className="absolute z-10"
-    >
-      <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl w-[800px]">
-        <img
-          src={projects[index].image}
-          alt={projects[index].title}
-          className="w-full h-[420px] object-cover"
-        />
-
-        <div className="p-8">
-          <h3 className="text-2xl font-semibold mb-2">
-            {projects[index].title}
-          </h3>
-
-          <p className="text-gray-400 mb-4">
-            {projects[index].description}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mb-6">
-            {projects[index].tech.map((t) => (
-              <span
-                key={t}
-                className="text-xs px-3 py-1 rounded-full bg-zinc-800"
-              >
-                {t}
-              </span>
-            ))}
+          {/* SLIDE IZQUIERDO */}
+          <div className="absolute -translate-x-[55%] scale-90 opacity-40 z-0 transition-all duration-500">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl w-[720px]">
+              <img
+                src={
+                  projects[(index - 1 + projects.length) % projects.length]
+                    .image
+                }
+                alt="preview-left"
+                className="w-full h-[420px] object-cover"
+              />
+            </div>
           </div>
 
-          <a
-            href={projects[index].link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-black hover:bg-gray-200 transition"
+          {/* SLIDE CENTRAL */}
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 20,
+              mass: 0.8,
+            }}
+            className="relative z-10 w-full max-w-4xl px-4 md:px-0"
           >
-            Ver proyecto <ExternalLink size={18} />
-          </a>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl w-full">
+              {/* Imagen responsive */}
+              <div className="w-full aspect-video">
+                <img
+                  src={projects[index].image}
+                  alt={projects[index].title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="p-5 md:p-8">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2">
+                  {projects[index].title}
+                </h3>
+
+                <p className="text-gray-400 mb-4 text-sm md:text-base">
+                  {projects[index].description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {projects[index].tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs px-3 py-1 rounded-full bg-zinc-800"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={projects[index].link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-black hover:bg-gray-200 transition text-sm md:text-base"
+                >
+                  Ver proyecto <ExternalLink size={18} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+          {/* SLIDE DERECHO */}
+          <div className="absolute translate-x-[55%] scale-90 opacity-40 z-0 transition-all duration-500">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl w-[720px]">
+              <img
+                src={projects[(index + 1) % projects.length].image}
+                alt="preview-right"
+                className="w-full h-[420px] object-cover"
+              />
+            </div>
+          </div>
+
+          {/* BOTÓN DERECHA */}
+          <button
+            onClick={next}
+            className="absolute right-0 z-20 p-3 rounded-full bg-zinc-900 hover:bg-zinc-800"
+          >
+            <ArrowRight />
+          </button>
         </div>
-      </div>
-    </motion.div>
-
-    {/* SLIDE DERECHO */}
-    <div className="absolute translate-x-[55%] scale-90 opacity-40 z-0 transition-all duration-500">
-      <div className="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl w-[720px]">
-        <img
-          src={projects[(index + 1) % projects.length].image}
-          alt="preview-right"
-          className="w-full h-[420px] object-cover"
-        />
-      </div>
-    </div>
-
-    {/* BOTÓN DERECHA */}
-    <button
-      onClick={next}
-      className="absolute right-0 z-20 p-3 rounded-full bg-zinc-900 hover:bg-zinc-800"
-    >
-      <ArrowRight />
-    </button>
-
-  </div>
-</section>
-
+      </section>
 
       <section id="contact" className="bg-zinc-950 py-24 text-center">
         <h2 className="text-4xl font-semibold mb-6 flex justify-center gap-3">
@@ -383,10 +430,18 @@ export default function Home() {
         </p>
 
         <div className="flex justify-center gap-6">
-          <a href="https://github.com/DavidHecon" className="hover:text-white" target="_blank">
+          <a
+            href="https://github.com/DavidHecon"
+            className="hover:text-white"
+            target="_blank"
+          >
             <Github />
           </a>
-          <a href="https://www.linkedin.com/in/david-hernandez-contreras/" className="hover:text-white" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/david-hernandez-contreras/"
+            className="hover:text-white"
+            target="_blank"
+          >
             <Linkedin />
           </a>
         </div>
