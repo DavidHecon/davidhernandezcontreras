@@ -53,7 +53,7 @@ export default function Home() {
       image: "/img/hecon.png",
       link: "https://heconshop.netlify.app/",
       description: "Tienda en línea de moda streetwear.",
-      tech: ["Next.js", "Framer Motion"],
+      tech: ["React","Next.js", "JavaScript", "CSS", "GTM"],
     },
     {
       title: "Landing Fokus",
