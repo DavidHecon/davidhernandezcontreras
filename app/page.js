@@ -146,7 +146,7 @@ export default function Home() {
           <User /> Sobre mí
         </h2>
         <p className="text-gray-400 leading-relaxed">
-          ¡Hola! Soy estudiante de Ingeniería en Informática, apasionado por la tecnología y enfocado en desarrollarme como Developer Front-End. 
+          ¡Hola! Soy Ingeniero en Informática, apasionado por la tecnología y enfocado en desarrollarme como Developer Front-End. 
           Tengo habilidades sólidas para trabajar en equipo y bajo presión, lo que me permite colaborar eficazmente en proyectos desafiantes.
           Soy entusiasta de las nuevas herramientas tecnológicas, me adapto rápidamente a los cambios, siempre en búsqueda de aprender y mejorar mis conocimientos.
         </p>
