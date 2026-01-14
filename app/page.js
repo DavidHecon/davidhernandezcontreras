@@ -177,7 +177,7 @@ export default function Home() {
                 UPIICSA – Instituto Politécnico Nacional
               </p>
               <span className="text-sm text-gray-500 block mt-2">
-                8.º semestre · En curso
+                2021 · 2026
               </span>
             </div>
           </motion.div>
