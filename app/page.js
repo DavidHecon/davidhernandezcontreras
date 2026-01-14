@@ -49,10 +49,10 @@ export default function Home() {
       tech: ["HTML", "JavaScript", "CSS"],
     },
     {
-      title: "Landing Hecon",
+      title: "Hecon Shop",
       image: "/img/hecon.png",
-      link: "https://tuproyecto6.com",
-      description: "Landing optimizada para conversión y performance.",
+      link: "https://heconshop.netlify.app/",
+      description: "Tienda en línea de moda streetwear.",
       tech: ["Next.js", "Framer Motion"],
     },
     {
